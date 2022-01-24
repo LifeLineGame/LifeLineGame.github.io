@@ -1,19 +1,16 @@
-import Game from './Game.js';
+import GenderSelector from './GenderSelector.js';
 const start = document.getElementById('button');
 const body = document.querySelector('body');
-const mainMenuTheme = new Audio('../assets/audio/music/mainmenu.mp3');
 const startGame = () => {
-    mainMenuTheme.pause();
     body.innerHTML = '';
-    const canvas = document.createElement('canvas');
-    body.append(canvas);
-    const game = new Game(canvas);
+    const genderSelect = new GenderSelector(body);
 };
 const init = () => {
-    mainMenuTheme.load();
-    mainMenuTheme.play();
-    mainMenuTheme.loop = true;
-    mainMenuTheme.volume = 0.5;
+    document.getElementById('logo').onmouseup = (event) => {
+        if (event.button === 2) {
+            window.open('https://www.youtube.com/watch?v=9gAVaTKcpMY');
+        }
+    };
     const button = document.createElement('button');
     button.innerHTML = 'Start Game';
     start.append(button);

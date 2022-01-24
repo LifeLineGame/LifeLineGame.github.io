@@ -1,11 +1,7 @@
-export default class Circle {
-  private index: number;
+import RoundObject from './RoundObject.js';
 
-  private xPos: number;
-
-  private yPos: number;
-
-  private radius: number = 50;
+export default class Circle extends RoundObject {
+  protected type: string;
 
   /**
    * Initialize Circle
@@ -13,11 +9,20 @@ export default class Circle {
    * @param index Index
    * @param xPos x Position
    * @param yPos y Position
+   * @param type type of circle
    */
-  public constructor(index: number, xPos: number, yPos: number) {
-    this.index = index;
-    this.xPos = xPos;
-    this.yPos = yPos;
+  public constructor(index: number, xPos: number, yPos: number, type: string) {
+    super(index, xPos, yPos, 50);
+    this.type = type;
+  }
+
+  /**
+   * Fuck
+   *
+   * @returns Type
+   */
+  public getType(): string {
+    return this.type;
   }
 
   /**
@@ -36,42 +41,6 @@ export default class Circle {
     ctx.font = `${20}px sans-serif`;
     ctx.fillStyle = 'black';
     ctx.textAlign = 'center';
-    ctx.fillText(`${this.index + 1}`, this.xPos, this.yPos);
-  }
-
-  /**
-   * Gets x Position
-   *
-   * @returns x Position
-   */
-  public getXPos(): number {
-    return this.xPos;
-  }
-
-  /**
-   * Gets y Position
-   *
-   * @returns y Position
-   */
-  public getYPos(): number {
-    return this.yPos;
-  }
-
-  /**
-   * Gets circle radius
-   *
-   * @returns Radius
-   */
-  public getRadius(): number {
-    return this.radius;
-  }
-
-  /**
-   * Gets index
-   *
-   * @returns Index
-   */
-  public getIndex(): number {
-    return this.index;
+    ctx.fillText(`${this.index + 1}`, this.xPos, this.yPos + 7);
   }
 }
