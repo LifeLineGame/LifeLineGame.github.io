@@ -3,7 +3,7 @@ export default class Level {
 
   protected ctx: CanvasRenderingContext2D;
 
-  protected coins: number;
+  protected money: number;
 
   protected isCompleted: boolean;
 
@@ -12,20 +12,21 @@ export default class Level {
   protected points: number;
 
   /**
-   * @param coins How many coins the question should reward if the answer is correct
+   * @param money How many money the question should reward if the answer is correct
    * @param canvasId canvas ID
    */
   public constructor(
-    coins: number,
+    money: number,
     canvasId: HTMLCanvasElement,
   ) {
-    this.coins = coins;
+    this.money = money;
+    this.isCompleted = false;
     this.points = 0;
     this.questionDone = false;
 
     this.canvas = canvasId;
-    this.canvas.width = 1700;
-    this.canvas.height = 956.25;
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
     this.ctx = this.canvas.getContext('2d');
   }
 
@@ -42,6 +43,13 @@ export default class Level {
    */
   public getCompletion(): boolean {
     return this.isCompleted;
+  }
+
+  /**
+   * Sets status
+   */
+  public setCompletion(): void {
+    this.isCompleted = false;
   }
 
   /**
@@ -74,8 +82,8 @@ export default class Level {
    *
    * @returns Money
    */
-  public getCoins(): number {
-    return this.coins;
+  public getMoney(): number {
+    return this.money;
   }
 
   /**
