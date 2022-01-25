@@ -48,7 +48,7 @@ export default class Bossfight extends Level {
     this.checkpointIndex = index;
     this.isCompleted = false;
     if (this.checkpointIndex === 4) {
-      this.bossHealth = 400;
+      this.bossHealth = 600;
     }
     this.question = ['Wat moet je doen als een vreemdeling je vraagt een foto van jezelf naar hem of haar te sturen?',
       'Wat is het allerbelangrijkste dat je jezelf moet afvragen voordat je iets online zet?',
@@ -66,15 +66,15 @@ export default class Bossfight extends Level {
     this.answerOne = ['Negeren.',
       'Vind ik het goed dat iedereen deze post kan zien?',
       'Ik wacht het af en kijk wat er gebeurt.',
-      'Vraag voordat je het vriendschapsverzoek accepteert persoonlijk aan je klasgenoot of hij dat is',
+      'Vraag voordat je het vriendschapsverzoek accepteert persoonlijk aan je klasgenoot of hij dat is.',
       'Je laat het aan je kleine broertje of zusje zien.',
-      'Je blijft je vriend vragen om het te verwijderen tot hij het doet',
+      'Je blijft je vriend vragen om het te verwijderen tot hij het doet.',
       'Vragen of deze link wel echt is.',
       'Verwijderen en melden.',
       'Je volledige naam.',
-      'Met je vriend meegaan',
-      'Laat de link aan een volwassene zien en vraag of het veilig is',
-      'Je doet de challenge om hopelijk likes te krijgen',
+      'Met je vriend meegaan.',
+      'Laat de link aan een volwassene zien en vraag of het veilig is.',
+      'Je doet de challenge om hopelijk veel likes te krijgen.',
     ];
     this.answerTwo = ['Stuur de foto, ook al is het een vreemde.',
       'Zal dit me populair maken?',
@@ -94,13 +94,13 @@ export default class Bossfight extends Level {
       'Ik probeer diegene te helpen (en ik meld het).',
       'Je accepteert het vriendschapsverzoek meteen',
       'Je wilt niemand bang maken en je verwijdert het.',
-      'Je laat het, je kunt er verder niets aan doen',
+      'Je laat het, je kunt er verder niets aan doen.',
       'Een bericht naar hem sturen via een andere app.',
       'Op je instagram reposten.',
-      'Een deel van je naam en een nummer (mario123)',
+      'Een deel van je naam en een nummer. (Bijvoorbeeld: mario123)',
       'Meteen aan een volwassene vertellen.',
       'Vraag aan je vriend om het eerst te downloaden en testen.',
-      'Daag ze uit om iets nog gevaarlijker te doen voor meer views.',
+      'Daag ze uit om iets nog gevaarlijker te doen voor meer weergaven.',
     ];
     this.answerFour = ["Stuur geen foto's en vertel het meteen aan een volwassene.",
       'Heb ik mijn spelling gecontroleerd?',
@@ -110,7 +110,7 @@ export default class Bossfight extends Level {
       'Je plaats een grappige foto van je vriend om hem terug te pakken.',
       'Hem meteen blokkeren.',
       'Niks.',
-      'Een woord met hoofdletters , cijfers en leestekens (bijvoorbeeld @,!.)',
+      'Een woord met hoofdletters, cijfers en leestekens. (bijvoorbeeld @,!.)',
       'Vertellen aan je andere vrienden.',
       'Je test het spel op iemand anders zijn computer.',
       'Je helpt de video op te nemen maar alleen als je vriend al de gevaarlijke dingen doet.',
@@ -123,7 +123,7 @@ export default class Bossfight extends Level {
       'Je praat met je ouders of leerkracht en zegt waarom je het niet leuk vindt.',
       'Een bericht naar hem sturen via een andere app.',
       'Verwijderen en melden.',
-      'Een woord met hoofdletters , cijfers en leestekens (bijvoorbeeld @,!.)',
+      'Een woord met hoofdletters, cijfers en leestekens. (bijvoorbeeld @,!.)',
       'Meteen aan een volwassene vertellen.',
       'Laat de link aan een volwassene zien en vraag of het veilig is.',
       'Leg uit waarom je denkt dat dit geen goed idee is en meld het aan je ouders of leerkracht.',
@@ -131,7 +131,7 @@ export default class Bossfight extends Level {
     this.currentAnswers = [];
     this.circles = [];
     this.index = 0;
-    this.indexArray = [0, 1, 2, 3, 4, 5, 6, 7];
+    this.indexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
     this.randomIndexArray = [];
     let i = this.indexArray.length;
     let j = 0;
@@ -169,7 +169,7 @@ export default class Bossfight extends Level {
       this.answerFour[this.randomIndexArray[this.index]],
     );
     if (this.index !== this.question.length + 1) {
-      if (this.index <= 8) {
+      if (this.index <= 12) {
         this.index += 1;
       }
     }
